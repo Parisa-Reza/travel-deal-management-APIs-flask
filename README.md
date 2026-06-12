@@ -109,7 +109,8 @@ pip install -r requirements.txt
 ```bash
 cp config.example.py config.py
 ```
-add the URI SQLALCHEMY_DATABASE_URI = "sqlite:///employees.db"
+confugure 
+> SQLALCHEMY_DATABASE_URI = "sqlite:///travel_deals.db"
 
 ### Run the Application
 ```bash
