@@ -24,4 +24,16 @@ class DealService:
         db.session.commit()
         return deal
 
+    @staticmethod
+
+    def get_all():
+        
+        """
+        Retrieves all travel deals from the database.
+        Returns: A list of all Deals model instances.
+        """
+    
+
+        return Deals.query.all()
+
 

@@ -50,3 +50,26 @@ def create_deal():
     except Exception as e:
         logger.error(f"Error during deal creation: {str(e)}")
         return jsonify({"message": "An error occurred while creating the deal."}), 500
+
+
+
+
+@travel_deals_bp.route("/", methods=["GET"])
+def get_all_deals():
+    """
+    Handles GET requests to retrieve all travel deals.
+    Returns: A JSON list of all deals and an HTTP 200 status code.
+    """
+    try:
+        # service layer calling
+        deals = DealService.get_all()
+        
+        # Convert every SQLAlchemy object in the list into pyhton dictionary
+        dict_deals = [deal.to_dict() for deal in deals]
+        
+        # here from the database instances -> python dictionary -> json
+        return jsonify(dict_deals), 200
+        
+    except Exception as e:
+        logger.error(f"Error while fetching deals: {str(e)}")
+        return jsonify({"message": "An error occurred while retrieving deals."}), 500
