@@ -11,7 +11,8 @@ from routes.deals import (
 def create_app():
 
     """
-    application 
+    initialization and configuration of flask application 
+    Returns: fully configured Flask application instance.
     """
     app= Flask(__name__)
 
@@ -43,6 +44,9 @@ def create_app():
     def health_check():
         """
         health checking api
+
+        Returns: A health check status confirmation message as a dict
+        
         """
 
         return {
@@ -53,7 +57,9 @@ def create_app():
     @app.errorhandler(Exception)
     def handle_exception(error):
         """
-        globally error handling
+        Globally catches unhandled exceptions and returns a structured error response.
+        Args:  exception instance.
+        Returns: z JSON error message and an HTTP 500 status code.
         """
 
         return (

@@ -36,4 +36,16 @@ class DealService:
 
         return Deals.query.all()
 
+    
+    @staticmethod
+
+    def get_deal_by_id(id):
+        """
+         Handles GET requests to retrieve a single travel deal by ID
+         args : deal ID
+         return: single Deals model instance 
+        """
+
+        return Deals.query.get(id)
+
 

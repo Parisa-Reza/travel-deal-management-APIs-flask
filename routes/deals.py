@@ -73,3 +73,30 @@ def get_all_deals():
     except Exception as e:
         logger.error(f"Error while fetching deals: {str(e)}")
         return jsonify({"message": "An error occurred while retrieving deals."}), 500
+
+
+
+
+@travel_deals_bp.route("/<int:id>", methods=["GET"])
+
+def get_deal(id):
+    """
+    Fetch a travel deal by its unique database ID.
+    arg : The unique integer ID of the deal.
+    return: A JSON response containing the deal data or a 404 error message.
+    """
+
+    one_deal = (DealService.get_deal_by_id(id))
+
+    if not one_deal:
+        return (
+            jsonify(
+                {
+                    "mesaage" : "deal not found in the database"
+                }
+            ),404
+        )
+
+  # single db instance -> python dict -> jsonify
+  
+    return jsonify(one_deal.to_dict()),200
