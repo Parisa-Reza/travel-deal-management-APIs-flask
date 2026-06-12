@@ -4,7 +4,11 @@ A backend REST API built with **Python (Flask)** for managing travel deals.
 
 ---
 ## Quick Preview
----
+
+<img width="1815" height="899" alt="Screenshot from 2026-06-12 18-17-38" src="https://github.com/user-attachments/assets/95955922-ac0b-4255-9946-906bd97a0c26" />
+<img width="1815" height="899" alt="Screenshot from 2026-06-12 18-18-02" src="https://github.com/user-attachments/assets/c5bcd399-29de-4e1d-8822-854558270f2e" />
+<img width="1815" height="899" alt="Screenshot from 2026-06-12 18-18-32" src="https://github.com/user-attachments/assets/7256e7cd-f2d2-461e-a3e3-54161b7964f6" />
+
 ---
 
 ##  Postman Collection
@@ -86,7 +90,7 @@ cd travel-deal-management-APIs-flask
 
 ###  Create a Virtual Environment
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 
 Activate the virtual environment:
@@ -104,7 +108,7 @@ pip install -r requirements.txt
 
 ### Run the Application
 ```bash
-python app.py
+python3 app.py
 ```
 
 By default, the server will start on:
