@@ -106,6 +106,11 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
+```bash
+cp config.example.py config.py
+```
+add the URI SQLALCHEMY_DATABASE_URI = "sqlite:///employees.db"
+
 ### Run the Application
 ```bash
 python3 app.py
